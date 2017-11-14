@@ -7,13 +7,22 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0.0"
-        setProperty("archivesBaseName", "sombrenuit-pagerslidingtabstrip-$versionName")
+        setProperty("archivesBaseName", "pagerslidingtabstrip-$versionName")
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+createMavenArtifacts{
+    repositories.mavenDeployer{
+        pom.groupId = "com.kodbiro.kbimageview"
+        pom.artifactId = "kbimageview"
+        pom.version = "1.0"
+        repository(url: uri("repo")
     }
 }
 
